@@ -1,4 +1,4 @@
-<!-- [FILEPATH] src/common/components/shared/SiteFooter.vue -->
+<!-- src/common/components/shared/SiteFooter.vue -->
 <template>
   <footer class="site-footer">
     <!-- 1) 왼쪽에 카피라이트 -->

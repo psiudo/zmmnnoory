@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/common/components/shared/ProductCard.vue -->
 <template>
   <div class="product-card">
     <div class="img-wrapper">
@@ -39,12 +38,12 @@
 
   .img-wrapper img {
     width: 100%;
-    height: auto;
+    height: 275px;
     display: block;
   }
 
   .category {
-    width: 43px;
+    width: 100%;
     height: 24px;
     color: #2E2E2E;
     font-family: Inter;
@@ -56,7 +55,7 @@
   }
 
   .title {
-    width: 120px;
+    width: 100%;
     height: 18px;
     color: #2E2E2E;
     font-family: Inter;

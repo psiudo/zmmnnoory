@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/modules/games/views/GameListView.vue -->
 <template>
   <div class="games-page">
     <AppHeader />

@@ -1,4 +1,4 @@
-<!-- [FILEPATH] src/layouts/MainLayout.vue -->
+<!-- src/layouts/MainLayout.vue -->
 <template>
   <div class="main-layout">
     <AppHeader />
@@ -24,7 +24,7 @@ import SiteFooter from '@/common/components/shared/SiteFooter.vue'
 .content {
   flex: 1;
   width: 100%;
-  max-width: 800px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 50px 20px;
 }

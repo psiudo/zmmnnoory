@@ -1,4 +1,3 @@
-// [FILEPATH] src/store/Games.ts
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import axios from '@/services/axios'

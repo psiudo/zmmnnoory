@@ -1,4 +1,4 @@
-<!-- [FILEPATH] src/common/components/login/LoginFooter.vue -->
+<!-- [FILEPATH] src/common/components/login/Footer.vue -->
 <template>
   <p class="copyright-text">
     Copyright © Zmmnnoory 2025. All rights reserved.

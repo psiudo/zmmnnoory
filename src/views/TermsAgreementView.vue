@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/views/TermsAgreementView.vue -->
 <template>
   <MainLayout>
     <div class="page-center">

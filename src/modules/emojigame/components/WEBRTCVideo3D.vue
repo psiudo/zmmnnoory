@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/modules/emojigame/components/WEBRTCVideo3D.vue -->
 <template>
   <div class="webrtc-container">
     <div class = "UIoverlay">

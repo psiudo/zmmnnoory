@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/views/emoji/EmojiGameView.vue -->
 <!-- 이모지 게임이 띄워질 간단한 예시 뷰입니다. (실제 서비스에선 이거 쓰면 안됨) -->
 <template>
   <main class="emoji-game-view">

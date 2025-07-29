@@ -1,4 +1,4 @@
-<!-- [FILEPATH] src/common/components/shared/BaseButton.vue -->
+<!-- [FILEPATH] src/common/components/BaseButton.vue -->
 <!-- 상위 폴더에서 @click-event 라고 쓰면 사용 가능 -->
 <template>
   <button class="base-button" @click="$emit('clickEvent')">

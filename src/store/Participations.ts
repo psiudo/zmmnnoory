@@ -1,4 +1,3 @@
-// [FILEPATH] src/store/Participations.ts
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import axios from '@/services/axios'
@@ -7,11 +6,11 @@ import type { ParticipatedPayload, StartPayload } from '@/services/info'
 export const useParticipationStore = defineStore('participation', () => {
   const API_URL = "https://ec2-3-38-95-2.ap-northeast-2.compute.amazonaws.com"
 
-  // 특정 멤버의 모든 참여 내역 조회
+  // 내가 참여한 게임 조회
   const participated_game = ref<ParticipatedPayload[] | null>(null)
-  const getParticipatedGame = async (memberId: number): Promise<void> => {
+  const getParticipatedGame = async (): Promise<void> => {
     try {
-      const res = await axios.get(`${API_URL}/api/participations/member/${memberId}`)
+      const res = await axios.get(`${API_URL}/api/participations/member/me`)
       console.log('참여 내역 조희 get', res)
       participated_game.value = res.data
     } catch (err) {

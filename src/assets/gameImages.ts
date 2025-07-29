@@ -1,4 +1,3 @@
-// [FILEPATH] src/assets/gameImages.ts
 const imageModules = import.meta.glob('@/assets/game-thumbnails/*.png', { eager: true });
 
 const imageMap: Record<string, string> = {};

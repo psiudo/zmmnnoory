@@ -56,7 +56,6 @@ import LoginFooter from '@/common/components/login/LoginFooter.vue';
   width: 537px;
   background: white;
   padding: 40px;
-  border-radius: 10px;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   

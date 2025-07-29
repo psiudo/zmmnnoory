@@ -1,7 +1,9 @@
-<!-- [FILEPATH] src/common/components/shared/VideoCard.vue -->
 <template>
   <div class="video-card">
-    <img :src="video.thumbnail" alt="video thumbnail">
+    <img 
+      :src="video.thumbnail" 
+      alt="video thumbnail" 
+    >
   </div>
 </template>
 
@@ -23,6 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 
   .video-card img {

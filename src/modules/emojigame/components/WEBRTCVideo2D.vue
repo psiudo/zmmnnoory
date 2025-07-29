@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/modules/emojigame/components/WEBRTCVideo2D.vue -->
 <template>
   <div class="webrtc-container">
     <video ref="videoRef" autoplay playsinline></video>

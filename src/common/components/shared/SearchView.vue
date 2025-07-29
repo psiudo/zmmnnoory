@@ -1,8 +1,8 @@
-<!-- [FILEPATH] src/common/components/shared/SearchView.vue -->
 <template>
   <div class="search-bar" :class="{ choice: isChoice }">
 
     <div
+      ref="keywordRef"
       class="filter-item"
       :class="{ focused: isKeywordFocused }"
       style="width: 393px; padding-left: 35px;"
@@ -25,6 +25,7 @@
     <div class="divider" :class="{ hidden: activeIndex === 0 || activeIndex === 1 || hoverIndex === 0 || hoverIndex === 1}"></div>
 
     <div
+      ref="firstFilterRef"
       class="filter-item" style="width: 213px;" tabindex="0"
       @focus="activeIndex = 1"
       @blur="activeIndex = null"
@@ -38,6 +39,7 @@
     <div class="divider" :class="{ hidden: activeIndex === 2 || activeIndex === 1 || hoverIndex === 2 || hoverIndex === 1}"></div>
 
     <div
+      ref="secondFilterRef"
       class="filter-item" style="width: 213px;" tabindex="0"
       @focus="activeIndex = 2"
       @blur="activeIndex = null"
@@ -56,6 +58,7 @@
     <Dropdown
       v-if="activeIndex === 1"
       class="dropdown-1"
+      :style="getDropdownStyle(1)"
       :options="first_options"
       @select="onSelectFirst"
     ></Dropdown>
@@ -63,6 +66,7 @@
     <Dropdown
       v-if="activeIndex === 2 && isRange === false"
       class="dropdown-2"
+      :style="getDropdownStyle(2)"
       :options="second_options"
       @select="onSelectSecond"
       ></Dropdown>
@@ -70,6 +74,7 @@
     <RangeDropDown
       v-if="activeIndex === 2 && isRange === true"
       class="dropdown-2"
+      :style="getDropdownStyle(2)"
       :option="props.filters[1]"
       :initialMin="minRange"
       :initialMax="maxRange"
@@ -97,6 +102,11 @@
   const hoverIndex = ref<number | null>(null)
   const activeIndex = ref<number | null>(null)
 
+  // 드롭다운 위치 계산을 위한 ref
+  const keywordRef = ref<HTMLElement>()
+  const firstFilterRef = ref<HTMLElement>()
+  const secondFilterRef = ref<HTMLElement>()
+
   interface Props {
     filters: string[]
     first_options: string[]
@@ -116,6 +126,23 @@
     activeIndex.value = null
   }
 
+  function getDropdownStyle(index: number) {
+    const element = index === 1 ? firstFilterRef.value : secondFilterRef.value
+    if (!element) return {}
+    
+    const rect = element.getBoundingClientRect()
+    const searchBarRect = element.closest('.search-bar')?.getBoundingClientRect()
+    
+    if (!searchBarRect) return {}
+    
+    return {
+      position: 'absolute',
+      top: `${rect.height + 10}px`,
+      left: `${rect.left - searchBarRect.left}px`,
+      zIndex: 10
+    }
+  }
+
   function emitSearch() {
     console.log('검색 실행:', {
       keyword: keyword.value,
@@ -130,6 +157,7 @@
 <style scoped>
   /* 검색 바 관련 */
   .search-bar {
+    position: relative;
     display: flex;
     align-items: center;
     width: 898px;
@@ -231,18 +259,10 @@
     margin-right: 20px;
   }
 
-  /* 여기서부터는 드롭다운 관련 */
-  .dropdown-1 {
-    position: absolute;
-    top: 98px;
-    left: 393px;
-    z-index: 10;
-  }
-
+  /* 드롭다운 스타일 수정 */
+  .dropdown-1,
   .dropdown-2 {
     position: absolute;
-    top: 98px;
-    left: 606px;
     z-index: 10;
   }
 </style>

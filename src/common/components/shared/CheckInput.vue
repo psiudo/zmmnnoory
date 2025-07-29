@@ -1,4 +1,4 @@
-<!-- [FILEPATH] src/common/components/shared/CheckInput.vue -->
+<!-- [FILEPATH] src/common/components/CheckInput.vue -->
 <!-- 상위 폴더에서 type="원하는거" placeholder='원하는거' 하면됨 -->
 <!-- 상위 폴더에서 @click-event 라고 쓰면 사용 가능 -->
 <template>

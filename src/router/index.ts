@@ -1,4 +1,3 @@
-// [FILEPATH] src/router/index.ts
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import TermsAgreementView from '../views/TermsAgreementView.vue'
@@ -47,6 +46,16 @@ const router = createRouter({
       name : 'EmojiGameView',
       component: () => import('@/views/emoji/EmojiGameView.vue')
     },
+    {
+      path:'/videos',
+      name: 'Videos',
+      component: () => import('@/views/VideoListView.vue')
+    },
+    {
+      path: '/store',
+      name: 'Store',
+      component: () => import('@/views/StoreView.vue')
+    }
   ]
 })
 

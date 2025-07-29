@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/common/components/shared/RangeDropdown.vue -->
 <template>
   <div class="catalog-container" @mousedown.stop>
     <!-- 최소 보상 -->

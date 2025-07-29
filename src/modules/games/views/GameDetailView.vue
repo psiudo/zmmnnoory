@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/modules/games/views/GameDetailView.vue -->
 <template>
   <div class="game-detail-page">
     <AppHeader />

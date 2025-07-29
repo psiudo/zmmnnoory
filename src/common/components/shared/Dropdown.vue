@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/common/components/shared/Dropdown.vue -->
 <template>
   <div class="catalog-container">
     <p

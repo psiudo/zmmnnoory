@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/modules/games/components/GameCard.vue -->
 <template>
   <router-link :to="{ name: 'GameDetail', params: { id: game.id } }" class="game-card-link">
     <div class="game-card">

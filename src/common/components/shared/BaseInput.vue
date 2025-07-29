@@ -1,4 +1,4 @@
-<!-- [FILEPATH] src/common/components/shared/BaseInput.vue -->
+<!-- [FILEPATH] src/common/components/BaseInput.vue -->
 <!-- 상위 폴더에서 type="원하는거" placeholder='원하는거' 하면됨 -->
 <template>
   <input :type="type" :placeholder="placeholder" class="base-input">

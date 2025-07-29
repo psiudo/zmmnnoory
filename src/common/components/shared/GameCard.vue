@@ -1,4 +1,3 @@
-<!-- [FILEPATH] src/common/components/shared/GameCard.vue -->
 <template>
   <div class="game-info">
     <img :src="game.thumbnail" alt="thumbnail">
@@ -8,8 +7,8 @@
       <span>{{ game.point }}</span>
       <img src="@/assets/currency_symbol.png" alt="point symbol" />
     </div>
-    <div class="participate" :class="{ done: participationStatus === '참여완료', undone: participationStatus === '미참여' }">
-      <span>{{ participationStatus }}</span>
+    <div class="participate" :class="{ done: participationStatus === 'COMPLETED', undone: participationStatus === 'NOT_PARTICIPATED' }">
+      <span>{{ participationStatus === 'COMPLETED' ? '참여완료' : '미참여' }}</span>
     </div>
   </div>
 </template>
@@ -19,7 +18,7 @@
 
   defineProps<{
     game: Game
-    participationStatus: '참여완료' | '미참여'
+    participationStatus: 'COMPLETED' | 'NOT_PARTICIPATED'
   }>()
 </script>
 
