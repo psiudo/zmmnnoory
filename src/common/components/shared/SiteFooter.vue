@@ -17,7 +17,7 @@ import Stamp from '@/common/components/login/Stamp.vue'
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 1440px;
   padding: 0.75rem 1rem;
   box-sizing: border-box;
 }

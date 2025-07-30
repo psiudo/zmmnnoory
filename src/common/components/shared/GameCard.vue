@@ -1,16 +1,18 @@
 <template>
-  <div class="game-info">
-    <img :src="game.thumbnail" alt="thumbnail">
-    <span class="game-title">{{ game.title }} ({{ game.difficulty }})</span>
-    <span class="game-datatype">{{ game.require_data_type }}</span>
-    <div class="game-point">
-      <span>{{ game.point }}</span>
-      <img src="@/assets/currency_symbol.png" alt="point symbol" />
+  <RouterLink :to="{name: 'GameDetail', params: { id: game.id }}" style="text-decoration: none;">
+    <div class="game-info">
+      <img :src="game.thumbnail" alt="thumbnail">
+      <span class="game-title">{{ game.title }} ({{ game.difficulty }})</span>
+      <span class="game-datatype">{{ game.require_data_type }}</span>
+      <div class="game-point">
+        <span>{{ game.point }}</span>
+        <img src="@/assets/currency_symbol.png" alt="point symbol" />
+      </div>
+      <div class="participate" :class="{ done: participationStatus === 'COMPLETED', undone: participationStatus === 'NOT_PARTICIPATED' }">
+        <span>{{ participationStatus === 'COMPLETED' ? '참여완료' : '미참여' }}</span>
+      </div>
     </div>
-    <div class="participate" :class="{ done: participationStatus === 'COMPLETED', undone: participationStatus === 'NOT_PARTICIPATED' }">
-      <span>{{ participationStatus === 'COMPLETED' ? '참여완료' : '미참여' }}</span>
-    </div>
-  </div>
+  </RouterLink>
 </template>
 
 <script setup lang="ts">

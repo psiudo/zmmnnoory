@@ -60,7 +60,7 @@ function onSearch() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 1440px;
   height: 85px;
   padding: 0 28px 0 10px;
   border-bottom: 1px solid #2E2E2E;

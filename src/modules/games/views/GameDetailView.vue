@@ -4,7 +4,8 @@
     <main class="container" v-if="game">
       <section class="game-main-section">
         <div class="thumbnail-wrapper">
-          <img :src="getGameImage(game.imageKey)" :alt="game.title" class="main-thumbnail" />
+          <!-- <img :src="getGameImage(game.imageKey)" :alt="game.title" class="main-thumbnail" /> -->
+          <WEBRTCVideo3D/>
         </div>
 
         <div class="info-wrapper">
@@ -57,7 +58,13 @@ import { ref, onMounted } from 'vue'
 import AppHeader from '@/common/components/shared/AppHeader.vue'
 import GameCard from '../components/GameCard.vue'
 import { fetchGameById, fetchSimilarGames, type Game } from '@/services/games'
-import { getGameImage } from '@/assets/gameImages'
+// import { getGameImage } from '@/assets/gameImages'
+import { defineAsyncComponent } from 'vue'
+
+const WEBRTCVideo3D = defineAsyncComponent(() =>
+  import('@/modules/emojigame/components/WEBRTCVideo3D.vue')
+)
+
 
 const props = defineProps<{
   id: string

@@ -35,12 +35,16 @@
       </RouterLink>
     </div>
     <span class="tag"># MZ가 주목하는 챌린지 영상</span>
+    <div class="video-list">
+      <VideoCard
+        v-for="video in randomVideos"
+        :video="video"
+      />
+    </div>
   </div>
 
   <!-- 데이터 요청 -->
-  <div>
-
-  </div>
+  <Request></Request>
 
   <SiteFooter></SiteFooter>
 </template>
@@ -50,16 +54,18 @@
   import { RouterLink } from 'vue-router'
   // import { useGameStore } from '@/store/Games';
   import { useParticipationStore } from '@/store/Participations';
-  import { dummyGames, type Game } from '@/services/info';
+  import { dummyGames, type Game, dummyVideoList, type VideoList } from '@/services/info';
 
   import AppHeader from '@/common/components/shared/AppHeader.vue';
   import SiteFooter from '@/common/components/shared/SiteFooter.vue';
   import GameCard from '@/common/components/shared/GameCard.vue';
-  // import VideoCard from '@/common/components/shared/VideoCard.vue';
+  import VideoCard from '@/common/components/shared/VideoCard.vue';
+  import Request from '@/modules/main/Request.vue';
 
   // const gamestore = useGameStore()
   const participationstore = useParticipationStore()
   const randomGames = ref<Game[] | null>(null)
+  const randomVideos = ref<VideoList[] | null>(null)
 
   // 참여한 게임인지 확인하는 함수
   const getParticipationStatus = (title: string): 'COMPLETED' | 'NOT_PARTICIPATED' => {
@@ -79,11 +85,20 @@
       randomGames.value = shuffled.slice(0, 4)
     }
   })
+
+  onMounted(async () => {
+    const allVideos = dummyVideoList
+    if (allVideos.length > 0) {
+      // 랜덤 섞기 + 3개 선택
+      const shuffled = [...allVideos].sort(() => Math.random() - 0.5)
+      randomVideos.value = shuffled.slice(0, 3)
+    }
+  })
 </script>
 
 <style scoped>
   .main-image {
-    width: 100%;
+    width: 1440px;
     margin-top: 25px;
   }
 
@@ -152,6 +167,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 21px;
+    margin-top: 30px;
+  }
+
+  .video-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
     margin-top: 30px;
   }
 </style>
